@@ -97,6 +97,10 @@
     "node_modules",
     "dist"
   ],
+  "references": [
+    { "path": "./src" },
+    { "path": "./tests" }
+  ],
   "watchOptions": {
     "watchFile": "useFsEvents",
     "watchDirectory": "useFsEvents",
