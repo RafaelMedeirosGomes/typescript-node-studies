@@ -47,7 +47,7 @@
     "outDir": "./dist",
     // "removeComments": true,
     // "noEmit": true,
-    // "importHelpers": true,
+    "importHelpers": true,
     // "importsNotUsedAsValues": "remove",
     // "downlevelIteration": true,
     // "sourceRoot": "",
