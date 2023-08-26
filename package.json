@@ -7,5 +7,8 @@
     "start": "node dist/src/main.js",
     "test": "node dist/tests/dummy.test.js",
     "watch": "tsc --build --verbose --watch"
+  },
+  "dependencies": {
+    "tslib": "^2.6.2"
   }
 }
