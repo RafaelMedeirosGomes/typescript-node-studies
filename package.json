@@ -6,6 +6,6 @@
   "scripts": {
     "start": "node dist/src/main.js",
     "test": "node dist/tests/dummy.test.js",
-    "watch": "tsc --watch"
+    "watch": "tsc --build --verbose --watch"
   }
 }
