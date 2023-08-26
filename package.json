@@ -5,7 +5,7 @@
   },
   "scripts": {
     "build": "tsc --build --verbose --watch",
-    "start": "node dist/src/main.js"
+    "start": "node ./watcher.js"
   },
   "dependencies": {
     "tslib": "^2.6.2"
