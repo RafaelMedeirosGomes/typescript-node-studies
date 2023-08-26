@@ -4,8 +4,8 @@
     "typescript": "^5.2.2"
   },
   "scripts": {
-    "build": "tsc",
-    "start": "node dist/main.js",
+    "run": "node dist/src/main.js",
+    "test": "node dist/tests/dummy.test.js",
     "watch": "tsc --watch"
   }
 }
