@@ -88,5 +88,9 @@
     // "allowUnreachableCode": true,
     // "skipDefaultLibCheck": true,
     "skipLibCheck": true
-  }
+  },
+  "include": [
+    "./src",
+    "./tests"
+  ]
 }
