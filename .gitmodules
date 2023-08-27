@@ -1,8 +1,0 @@
-[submodule "src"]
-	path = src
-	url = git@github.com:RafaelMedeirosGomes/typescript-node-studies.git
-	branch = src
-[submodule "tests"]
-	path = tests
-	url = git@github.com:RafaelMedeirosGomes/typescript-node-studies.git
-	branch = tests
