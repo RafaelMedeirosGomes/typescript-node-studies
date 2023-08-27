@@ -31,7 +31,7 @@ function getProjectName() {
 }
 
 function spawnChildProcess(projectName) {
-  const { spawn } = require('child_process')
+  const { spawn } = require('node:child_process')
 
   const child = spawn('node', ['./runner.js',`./dist/${projectName}/main.js`], {
     stdio: ['inherit', 'inherit', 'inherit', 'ipc'],
@@ -46,7 +46,7 @@ function spawnChildProcess(projectName) {
 }
 
 function watchProjectFolder(projectName, childProcess) {
-  const fs = require('fs')
+  const fs = require('node:fs')
 
   const watcher = fs.watch(`./dist/${projectName}`)
 
