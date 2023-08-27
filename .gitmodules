@@ -6,3 +6,7 @@
 	path = tests
 	url = git@github.com:RafaelMedeirosGomes/typescript-node-studies.git
 	branch = tests
+[submodule "testrunner"]
+	path = testrunner
+	url = git@github.com:RafaelMedeirosGomes/typescript-node-studies.git
+	branch = testrunner
