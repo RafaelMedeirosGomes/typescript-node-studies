@@ -1,13 +1,17 @@
 {
+  "dependencies": {
+    "tslib": "^2.6.2"
+  },
   "devDependencies": {
     "@types/node": "^20.5.6",
     "typescript": "^5.2.2"
   },
+  "engines": {
+    "node": ">=18.11.0"
+  },
   "scripts": {
     "build": "tsc --build --verbose --watch",
-    "start": "node ./watcher.js"
-  },
-  "dependencies": {
-    "tslib": "^2.6.2"
+    "start": "node ./watcher.js",
+    "test": "node --test --watch ./dist/tests"
   }
 }
