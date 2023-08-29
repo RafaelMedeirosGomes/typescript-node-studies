@@ -1,9 +1,7 @@
 function run() {
   const projectName = getProjectName()
 
-  const childProcess = spawnChildProcess(projectName)
-
-  watchProjectFolder(projectName, childProcess)
+  watchProjectFolder(projectName)
 
 }
 
@@ -11,7 +9,7 @@ function getProjectName() {
   const [_execPath, _scriptPath, projectName] = process.argv
 
   if (!projectName) {
-    console.log('Usage: node index.js <project-name>')
+    console.log("Usage: node index.js <project-name>")
     process.exit(1)
   }
 
@@ -19,7 +17,7 @@ function getProjectName() {
     const { main } = require(`./dist/${projectName}/main.js`)
 
     if (!main) {
-      console.log(`Project ${projectName} doesn't export main function`)
+      console.log(`Project ${projectName} doesn"t export main function`)
       process.exit(1)
     }
 
@@ -30,31 +28,38 @@ function getProjectName() {
   }
 }
 
-function spawnChildProcess(projectName) {
-  const { spawn } = require('node:child_process')
+function watchProjectFolder(projectName) {
+  const fs = require("node:fs")
 
-  const child = spawn('node', ['./runner.js',`./dist/${projectName}/main.js`], {
-    stdio: ['inherit', 'inherit', 'inherit', 'ipc'],
+  const watcher = fs.watch(`./dist/${projectName}`)
+
+  let childProcess = spawnChildProcess(projectName)
+
+  watcher.on("change", () => {
+    childProcess.kill()
+    childProcess = spawnChildProcess(projectName)
+  })
+}
+
+function spawnChildProcess(projectName) {
+  const { spawn } = require("node:child_process")
+
+  const child = spawn("node", ["./runner.js",`./dist/${projectName}/main.js`], {
+    stdio: ["inherit", "inherit", "inherit", "ipc"],
   })
 
-  child.on('error', (error) => {
-    console.log('Error: ', error)
+  clear()
+
+  child.on("error", (error) => {
+    console.log("Error: ", error)
     process.exit(1)
   })
 
   return child
 }
 
-function watchProjectFolder(projectName, childProcess) {
-  const fs = require('node:fs')
-
-  const watcher = fs.watch(`./dist/${projectName}`)
-
-  watcher.on('change', () => {
-    console.clear()
-    childProcess.kill()
-    childProcess = spawnChildProcess(projectName)
-  })
+function clear() {
+  console.log("\x1Bc")
 }
 
 run()
