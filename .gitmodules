@@ -10,3 +10,7 @@
 	path = testrunner
 	url = https://github.com/RafaelMedeirosGomes/typescript-node-studies.git
 	branch = testrunner
+[submodule "types"]
+	path = types
+	url = https://github.com/RafaelMedeirosGomes/typescript-node-studies.git
+	branch = types
