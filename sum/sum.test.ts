@@ -1,4 +1,4 @@
-import { sum } from "../src/sum"
+import { sum } from "../../src/sum"
 
 Scenario("calculating the sum of two numbers", function (this: any) {
   Given("the numbers 1 and 2", function () {
