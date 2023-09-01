@@ -1,5 +1,5 @@
-import { Chainable } from "./Chainable";
-import { Printer } from "./Printer";
+import { Chainable } from "./Chainable"
+import { Printer } from "./Printer"
 
 export function it<T>(printer: Printer) {
   return function (actual: T) {

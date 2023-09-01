@@ -2,7 +2,7 @@ import { Printer } from "./Printer"
 import { describe } from "./describe"
 import { it } from "./it"
 
-const printer = new Printer()
+global.printer = new Printer()
 
 global.Scenario = describe("Scenario", printer)
 
